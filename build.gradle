@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id "com.github.johnrengelman.shadow" version "5.2.0"
+}
+
+group 'io.github.jroy'
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compile 'net.dv8tion:JDA:4.0.0_73'
+}
+
+shadowJar {
+    manifest {
+        attributes 'Main-Class': 'io.github.jroy.bongobot.BongoBot'
+    }
+}
