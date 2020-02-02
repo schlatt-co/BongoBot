@@ -35,29 +35,30 @@ public class BongoBot {
       StringBuilder builder = new StringBuilder();
       for (Member member : purges) {
         if (builder.length() > 1500) {
-          botsShouting.sendMessage(builder.toString()).complete();
+          log.sendMessage(builder.toString()).complete();
           builder = new StringBuilder();
         }
         builder.append(member.getUser().getName()).append("#").append(member.getUser().getDiscriminator()).append("\n");
         member.kick("Bongo purge").complete();
       }
+      log.sendMessage(builder.toString()).complete();
       log.sendMessage("about " + purges.size() + " purples were just kicked...").complete();
       log.sendMessage("lmao bye bye").complete();
     } else {
-      //Debug Mode
-      System.out.println("Debug Mode");
+      //Warning Mode
+      System.out.println("Warning Mode");
       List<Member> purges = collectMembers(guild);
-      botsShouting.sendMessage("Found " + purges.size() + " people who needs to up their pledge.").complete();
+      log.sendMessage("Found " + purges.size() + " people who needs to up their pledge.").complete();
       StringBuilder builder = new StringBuilder();
       for (Member member : purges) {
         if (builder.length() > 1500) {
-          botsShouting.sendMessage(builder.toString()).complete();
+          log.sendMessage(builder.toString()).complete();
           builder = new StringBuilder();
         }
-        builder.append(member.getAsMention()).append(" - ").append(member.getRoles().size()).append("\n");
+        builder.append(member.getAsMention()).append("\n");
       }
       builder.append("\n\n**better fucking resub or u guys about to get kicked on monday**");
-      botsShouting.sendMessage(builder.toString()).complete();
+      log.sendMessage(builder.toString()).complete();
     }
     jda.shutdown();
     System.exit(0);
