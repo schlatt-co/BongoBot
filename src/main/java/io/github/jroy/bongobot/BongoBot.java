@@ -31,7 +31,7 @@ public class BongoBot {
     if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY && calendar.get(Calendar.HOUR) == 0 && calendar.get(Calendar.AM_PM) == Calendar.AM) {
       //Bongo Mode
       List<Member> purges = collectMembers(guild);
-      log.sendMessage("yeah yeah whatup trevor here... bongo bot is bad so let's clean up the fuckin mess...").complete();
+      log.sendMessage("**yeah yeah whatup trevor here... bongo bot is bad so let's clean up the fuckin mess...**\n\n").complete();
       StringBuilder builder = new StringBuilder();
       for (Member member : purges) {
         if (builder.length() > 1500) {
@@ -42,13 +42,12 @@ public class BongoBot {
         member.kick("Bongo purge").complete();
       }
       log.sendMessage(builder.toString()).complete();
-      log.sendMessage("about " + purges.size() + " purples were just kicked...").complete();
-      log.sendMessage("lmao bye bye").complete();
+      log.sendMessage("\n\n\n**about " + purges.size() + " purples were just kicked...**\n\n**lmao bye bye**").complete();
     } else {
       //Warning Mode
       System.out.println("Warning Mode");
       List<Member> purges = collectMembers(guild);
-      log.sendMessage("Found " + purges.size() + " people who needs to up their pledge.").complete();
+      log.sendMessage("**Found " + purges.size() + " people who needs to up their pledge.**\n\n").complete();
       StringBuilder builder = new StringBuilder();
       for (Member member : purges) {
         if (builder.length() > 1500) {
@@ -57,7 +56,7 @@ public class BongoBot {
         }
         builder.append(member.getAsMention()).append("\n");
       }
-      builder.append("\n\n**better fucking resub or u guys about to get kicked on monday**");
+      builder.append("\n\n\n**better fucking resub or u guys about to get kicked on monday**");
       log.sendMessage(builder.toString()).complete();
     }
     jda.shutdown();
