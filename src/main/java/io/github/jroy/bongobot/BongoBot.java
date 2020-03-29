@@ -28,7 +28,7 @@ public class BongoBot {
 
     //What mode are we in?
     Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("EST"));
-    if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY && (calendar.get(Calendar.HOUR) == 0 || calendar.get(Calendar.HOUR) == 1 || calendar.get(Calendar.HOUR) == 11) && calendar.get(Calendar.AM_PM) == Calendar.AM) {
+    if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY && calendar.get(Calendar.HOUR) == 0 && calendar.get(Calendar.AM_PM) == Calendar.AM) {
       //Bongo Mode
       List<Member> purges = collectMembers(guild);
       log.sendMessage("**yeah yeah whatup trevor here... bongo bot is bad so let's clean up the fuckin mess...**\n\n").complete();
