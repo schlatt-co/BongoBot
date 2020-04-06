@@ -28,8 +28,8 @@ public class BongoBot {
 
     //What mode are we in?
     Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("EST"));
-    log.sendMessage("yeah lemme throw you some fuckin numbers: " + calendar.get(Calendar.DAY_OF_WEEK) + " and " + calendar.get(Calendar.HOUR) + " and " + calendar.get(Calendar.AM_PM)).queue();
-    if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY && calendar.get(Calendar.HOUR) == 0 && calendar.get(Calendar.AM_PM) == Calendar.AM) {
+//    log.sendMessage("yeah lemme throw you some fuckin numbers: " + calendar.get(Calendar.DAY_OF_WEEK) + " and " + calendar.get(Calendar.HOUR) + " and " + calendar.get(Calendar.AM_PM)).queue();
+    if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY && calendar.get(Calendar.HOUR) == 11 && calendar.get(Calendar.AM_PM) == Calendar.PM) {
       //Bongo Mode
       List<Member> purges = collectMembers(guild);
       log.sendMessage("**yeah yeah whatup trevor here... bongo bot is bad so let's clean up the fuckin mess...**\n\n").complete();
