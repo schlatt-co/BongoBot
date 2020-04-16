@@ -72,7 +72,7 @@ public class BongoBot {
       }
       boolean purge = true;
       for (Role role : member.getRoles()) {
-        if (!role.getName().startsWith("_")) {
+        if (!role.getName().startsWith("_") && !role.getId().equals("700104491596513382")) {
           purge = false;
         }
       }
