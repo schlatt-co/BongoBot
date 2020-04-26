@@ -58,6 +58,7 @@ public class BongoBot {
         builder.append(member.getAsMention()).append("\n");
       }
       builder.append("\n\n\n**better fucking resub or u guys about to get kicked on monday**");
+      builder.append("**if you joined with /twitch you'll need to re-do that command on monday**");
       log.sendMessage(builder.toString()).complete();
     }
     jda.shutdown();
