@@ -40,6 +40,11 @@ public class BongoBot {
           builder = new StringBuilder();
         }
         builder.append(member.getUser().getName()).append("#").append(member.getUser().getDiscriminator()).append("\n");
+        try {
+          member.getUser().openPrivateChannel().complete().sendMessage("You were kicked from Schlatt & Co! If you linked from the /twitch command on the MC server,\n" +
+              "you'll need to go back to the MC server and do /twitch again!").complete();
+        } catch (Throwable ignored) {
+        }
         member.kick("Bongo purge").complete();
       }
       log.sendMessage(builder.toString()).complete();
@@ -58,7 +63,7 @@ public class BongoBot {
         builder.append(member.getAsMention()).append("\n");
       }
       builder.append("\n\n\n**better fucking resub or u guys about to get kicked on monday**");
-      builder.append("**if you joined with /twitch you'll need to re-do that command on monday**");
+      builder.append("\n**if you joined with /twitch you'll need to re-do that command on monday**");
       log.sendMessage(builder.toString()).complete();
     }
     jda.shutdown();
